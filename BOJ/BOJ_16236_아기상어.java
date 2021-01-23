@@ -1,4 +1,4 @@
-package BOJ;
+package Algorithm.BOJ;
 
 import java.io.*;
 import java.util.ArrayList;

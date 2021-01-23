@@ -1,4 +1,4 @@
-package BOJ;
+package Algorithm.BOJ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -38,26 +38,44 @@ public class BOJ_14502_연구소 {
         }
 
         int max = Integer.MIN_VALUE;
-        int[][] maxArr = new int[N][M];
+        int[][] copy = new int[N][M];
+        //Point wall,wall2,wall3;
         for(int i=0; i<empty.size()-2; i++) {
             for(int j=i+1; j<empty.size()-1; j++) {
                 for(int k=j+1; k<empty.size(); k++) {
-                    int[][] tmp = new int[N][M];
-                    for(int x=0; x<N; x++) {
+                    copyArray(map, copy);
+                    setWall(i, j, k, copy);
+                    /*for(int x=0; x<N; x++) {
                         for(int y=0; y<M; y++) {
-                            tmp[x][y] = map[x][y];
+                            copy[x][y] = map[x][y];
                         }
                     }
-                    Point wall = empty.get(i);
-                    Point wall2 = empty.get(j);
-                    Point wall3 = empty.get(k);
-                    tmp[wall.x][wall.y] = tmp[wall2.x][wall2.y] = tmp[wall3.x][wall3.y] =1;
-                    max = Math.max(max, bfs(tmp));
+                    wall = empty.get(i);
+                    wall2 = empty.get(j);
+                    wall3 = empty.get(k);
+                    copy[wall.x][wall.y] = copy[wall2.x][wall2.y] = copy[wall3.x][wall3.y] =1;
+                    */
+                    max = Math.max(max, bfs(copy));
                 }
             }
         }
         System.out.println(max);
     }//end main
+    
+    static void copyArray(int[][] original, int[][] copy) {
+        for(int i=0; i<N; i++) {
+            for(int j=0; j<M; j++) {
+                copy[i][j] = original[i][j];
+            }
+        }
+    }
+
+    static void setWall(int i, int j, int k, int[][] copy) {
+        Point wall = empty.get(i);
+        Point wall2 = empty.get(j);
+        Point wall3 = empty.get(k);
+        copy[wall.x][wall.y] = copy[wall2.x][wall2.y] = copy[wall3.x][wall3.y] =1;
+    }
 
     static int bfs(int[][] map) {
         Queue<Point> q = new LinkedList<>();
@@ -86,6 +104,16 @@ public class BOJ_14502_연구소 {
             }
         }
 
+        /*int cnt = 0;
+        for(int[] x:map) {
+            for(int y:x) {
+                if(y==0) cnt++;
+            }
+        }*/
+        return findSafe(map);
+    }
+
+    static int findSafe(int[][] map) {
         int cnt = 0;
         for(int[] x:map) {
             for(int y:x) {

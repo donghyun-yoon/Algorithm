@@ -1,3 +1,5 @@
+package Algorithm.ssafy_실습;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
