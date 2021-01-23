@@ -1,15 +1,18 @@
-import java.util.Scanner;
+package BOJ;
 
-public class BOJ {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-        int N = sc.nextInt();
+public class BOJ_8958_OX퀴즈 {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(br.readLine());
         String[] str = new String[N];
         int[] cnt = new int[N];
 
         for(int i=0; i<N; i++) {
-            str[i] = sc.nextLine();
+            str[i] = br.readLine();
         }
 
         for(int i=0; i<N; i++) {
@@ -27,6 +30,6 @@ public class BOJ {
         for(int i: cnt) {
             System.out.println(i);
         }
-        sc.close();
+        br.close();
     }
 }

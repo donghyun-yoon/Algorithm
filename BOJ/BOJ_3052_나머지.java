@@ -1,3 +1,5 @@
+package BOJ;
+
 import java.util.Scanner;
 
 class BOJ_3052_나머지 {
