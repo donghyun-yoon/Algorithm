@@ -24,7 +24,10 @@ class ssafy_실습2_소금쟁이중첩 {
                 int x = Integer.parseInt(st.nextToken());
                 int y = Integer.parseInt(st.nextToken());
                 int dir = Integer.parseInt(st.nextToken())-1;
-                System.out.println("input data "+ x + " "+y+" " +dir);
+                if(pond[x][y] != 0 && checkDouble == 0) {
+                    checkDouble = bug;
+                    break;
+                }
                 pond[x][y] = bug;
 
                 for(int k=3; k>0; k--) {
@@ -32,8 +35,9 @@ class ssafy_실습2_소금쟁이중첩 {
                     int ny = y + dy[dir]*k;
 
                     if(nx<0 || ny<0 || nx>=N || ny >=N) break;
-                    if(pond[nx][ny] != 0) {
+                    if(pond[nx][ny] != 0 && checkDouble == 0) {
                         checkDouble = bug;
+                        break;
                     }
 
                     pond[nx][ny] = bug;

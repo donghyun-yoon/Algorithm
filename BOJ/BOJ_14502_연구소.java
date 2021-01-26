@@ -39,22 +39,11 @@ public class BOJ_14502_연구소 {
 
         int max = Integer.MIN_VALUE;
         int[][] copy = new int[N][M];
-        //Point wall,wall2,wall3;
         for(int i=0; i<empty.size()-2; i++) {
             for(int j=i+1; j<empty.size()-1; j++) {
                 for(int k=j+1; k<empty.size(); k++) {
                     copyArray(map, copy);
                     setWall(i, j, k, copy);
-                    /*for(int x=0; x<N; x++) {
-                        for(int y=0; y<M; y++) {
-                            copy[x][y] = map[x][y];
-                        }
-                    }
-                    wall = empty.get(i);
-                    wall2 = empty.get(j);
-                    wall3 = empty.get(k);
-                    copy[wall.x][wall.y] = copy[wall2.x][wall2.y] = copy[wall3.x][wall3.y] =1;
-                    */
                     max = Math.max(max, bfs(copy));
                 }
             }
@@ -103,13 +92,6 @@ public class BOJ_14502_연구소 {
                 }
             }
         }
-
-        /*int cnt = 0;
-        for(int[] x:map) {
-            for(int y:x) {
-                if(y==0) cnt++;
-            }
-        }*/
         return findSafe(map);
     }
 
