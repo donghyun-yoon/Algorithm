@@ -26,6 +26,8 @@ public class BOJ_7568_덩치 {
         
         for(int a: score)
             System.out.print(a+" ");
+            
+        br.close();
     }
     
     static class bulk {

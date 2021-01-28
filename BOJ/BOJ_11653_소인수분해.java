@@ -18,5 +18,6 @@ public class BOJ_11653_소인수분해 {
                 index++;
             }
         }
+        sc.close();
     }
 }

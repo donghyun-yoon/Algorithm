@@ -26,5 +26,6 @@ public class BOJ_1316_그룹단어체커 {
             }
         }
         System.out.println(cnt);
+        sc.close();
     }
 }

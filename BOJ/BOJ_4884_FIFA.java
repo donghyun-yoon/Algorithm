@@ -31,6 +31,7 @@ public class BOJ_4884_FIFA {
             long X = round1 + exponent-1;
             long Y = exponent-tm;
             System.out.println(G+"*"+A+"/"+T+"+"+D+"="+X+"+"+Y);
+            br.close();
         }
     }//end main
 }//end class
