@@ -1,5 +1,3 @@
-package Algorithm.BOJ;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
