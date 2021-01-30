@@ -1,5 +1,3 @@
-package Algorithm.BOJ;
-
 import java.util.Scanner;
 
 public class BOJ_11653_소인수분해 {

@@ -1,5 +1,3 @@
-package Algorithm.BOJ;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;

@@ -1,5 +1,3 @@
-package Algorithm.BOJ;
-
 import java.util.Scanner;
 
 public class BOJ_1316_그룹단어체커 {

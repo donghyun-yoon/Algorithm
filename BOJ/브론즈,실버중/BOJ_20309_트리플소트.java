@@ -1,5 +1,3 @@
-package Algorithm.BOJ;
-
 import java.util.Scanner;
 
 public class BOJ_20309_트리플소트 {
