@@ -14,7 +14,7 @@ class SWEA_1210_Ladder1 {
                 }
             }
             int col=0;
-						int row=98;
+			int row=98;
             for (int i = 0; i < Ladder.length; i++) {
                 if (Ladder[99][i] == 2) {
                     col = i; break;
